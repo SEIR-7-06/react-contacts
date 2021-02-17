@@ -17,6 +17,9 @@ class Login extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     console.log(this.state);
+    // Update isLoggedIn state in App
+    this.props.updateAuth();
+    // Redirect to the Contacts page
   }
 
   render() {

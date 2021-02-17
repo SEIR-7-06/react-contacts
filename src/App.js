@@ -20,8 +20,14 @@ ADD A LINK TO THE ABOUT PAGE IN NAVBAR
 
 class App extends React.Component {
   state = {
-    isLoggedIn: true,
+    isLoggedIn: false,
   }
+
+  updateAuth = () => {
+    this.setState({
+      isLoggedIn: true,
+    });
+  };
 
   render() {
     return (
@@ -43,7 +49,9 @@ class App extends React.Component {
               }}
             />
 
-            <Route path='/login' component={Login} />
+            <Route path='/login'>
+              <Login updateAuth={this.updateAuth} />
+            </Route>
 
             <Route path='/about' component={AboutPage} />
           </Switch>
