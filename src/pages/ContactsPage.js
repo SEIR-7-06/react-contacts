@@ -6,6 +6,7 @@
 
 import React from 'react';
 import ContactsList from '../components/ContactsList';
+import { withRouter } from 'react-router-dom';
 
 //  {name: '', email: '', id: 1}
 
@@ -40,9 +41,15 @@ class ContactsPage extends React.Component {
 
   render() {
     console.log('Contacts State = ', this.state);
+    console.log('Contacts Props = ', this.props);
+
+    if (this.props.isLoggedIn === false) {
+      this.props.history.push('/');
+      return <div></div>;
+    }
   
     return <ContactsList contacts={this.state.contacts} />;
   }
 }
 
-export default ContactsPage;
+export default withRouter(ContactsPage);
