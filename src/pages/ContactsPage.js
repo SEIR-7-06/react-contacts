@@ -43,11 +43,6 @@ class ContactsPage extends React.Component {
     console.log('Contacts State = ', this.state);
     console.log('Contacts Props = ', this.props);
 
-    if (this.props.isLoggedIn === false) {
-      this.props.history.push('/');
-      return <div></div>;
-    }
-  
     return <ContactsList contacts={this.state.contacts} />;
   }
 }
