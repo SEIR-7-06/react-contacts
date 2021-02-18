@@ -1,6 +1,6 @@
 import React from 'react';
 
-class NewContact extends React.component {
+class NewContact extends React.Component {
   state = {
     name: '',
     email: '',
