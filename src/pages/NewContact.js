@@ -14,9 +14,11 @@ class NewContact extends React.component {
   handleSubmit = () => {
     // 1) Fix the retun error below on line 21. How do we return JSX from a class component?
 
-    // 2) Make your API call here to submit POST request to JSON placeholder API (make sure your method is set to POST). If the request is successful, you get back a 201 status and the ID of the new contact record (this API does not actually create your data in the database, but will give you appropriate responses to valid requests);
+    // 2 Fix the handleInputChange method above. What does that method do?
 
-    // 3) On success, redirect to Contacts page (withRouter HOC component or use a hook if that's the solution you find on your own)
+    // 3) Make your API call here to submit POST request to JSON placeholder API (make sure your method is set to POST). If the request is successful, you get back a 201 status and the ID of the new contact record (this API does not actually create your data in the database, but will give you appropriate responses to valid requests);
+
+    // 4) On success, redirect to Contacts page (withRouter HOC component or use a hook if that's the solution you find on your own)
 
     // SUPER CHALLENGE - Create a function in the ContactsPage component to update the "contacts" state with the new contact object, including the ID you get back from the API. Call that function inside this handleSubmit method before the redirect on the line just above.
   };
