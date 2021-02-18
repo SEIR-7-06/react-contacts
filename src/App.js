@@ -21,7 +21,7 @@ ADD A LINK TO THE ABOUT PAGE IN NAVBAR
 
 class App extends React.Component {
   state = {
-    isLoggedIn: true,
+    isLoggedIn: false,
   }
 
   updateAuth = () => {
@@ -51,7 +51,7 @@ class App extends React.Component {
                 if (this.state.isLoggedIn) {
                   return <ContactsPage isLoggedIn={this.state.isLoggedIn} />;
                 } else {
-                  return <Redirect to='/' />
+                  return <Redirect to='/login' />
                 }
               }}
             />

@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom'
 
 class Login extends React.Component {
   state = {
@@ -20,6 +21,8 @@ class Login extends React.Component {
     // Update isLoggedIn state in App
     this.props.updateAuth();
     // Redirect to the Contacts page
+    this.props.history.push('/contacts');
+
   }
 
   render() {
@@ -29,20 +32,18 @@ class Login extends React.Component {
           <div className="col-6 offset-3">
             <h1>Login</h1>
             <form onSubmit={this.handleSubmit}>
+              
               <div>
-                <label className="form-label" htmlFor="name">Name</label>
-                <input className='form-control' type="text" id="name" name="name" value={this.state.name} onChange={this.handleInputChange} />
-              </div>
-              <div>
-                <label className="form-label" htmlFor="email">Email</label>
+                <label className="form-label mb-3" htmlFor="email">Email</label>
                 <input className='form-control' type="email" id="email" name="email" value={this.state.email} onChange={this.handleInputChange} />
               </div>
+
               <div>
-                <label className="form-label" htmlFor="email">Phone</label>
-                <input className='form-control' type="text" id="phone" name="phone" value={this.state.phone} onChange={this.handleInputChange} />
+                <label className="form-label" htmlFor="password">Password</label>
+                <input className='form-control mb-3' type="password" id="password" name="password" value={this.state.name} onChange={this.handleInputChange} />
               </div>
 
-              <button className="btn btn-primary">Login</button>
+              <button className="btn btn-primary float-end">Login</button>
             </form>
           </div>
         </div>
@@ -52,4 +53,4 @@ class Login extends React.Component {
 }
 
 
-export default Login;
+export default withRouter(Login);
