@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import Navbar from './components/Navbar';
 import AboutPage from './pages/AboutPage';
 import Login from './pages/Login';
+import NewContact from './pages/NewContact';
 
 import './App.css';
 
@@ -20,7 +21,7 @@ ADD A LINK TO THE ABOUT PAGE IN NAVBAR
 
 class App extends React.Component {
   state = {
-    isLoggedIn: false,
+    isLoggedIn: true,
   }
 
   updateAuth = () => {
@@ -29,10 +30,16 @@ class App extends React.Component {
     });
   };
 
+  logout = () => {
+    this.setState({
+      isLoggedIn: false,
+    });
+  };
+
   render() {
     return (
       <>
-        <Navbar />
+        <Navbar logout={this.logout} />
         <div className='container'>
           <Switch>
             {/* <Route exact path='/'>
@@ -48,6 +55,8 @@ class App extends React.Component {
                 }
               }}
             />
+
+            <Route path='/add-contact' component={NewContact} />
 
             <Route path='/login'>
               <Login updateAuth={this.updateAuth} />
